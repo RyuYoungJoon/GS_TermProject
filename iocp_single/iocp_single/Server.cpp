@@ -365,7 +365,7 @@ void AccessGame(short user_id, char* name)
 
 			//Clients[i].m_cLock.lock(); //i와 user_id가 같아지는 경우 2중락으로 인한 오류 발생 (데드락)
 			//다른 곳에서 status를 바꿀 수 있지만, 실습에서 사용할정도의 복잡도만 유지해야 하기 때문에 일단 놔두기로 한다. 
-			//그래도 일단 컴파일러 문제랑 메모리 문제는 해결해야 하기 때문에 status 선언을 atomic으로 바꾼다. 
+			//그래도 일단 컴파일러 문제랑 메모리 문제는 해결해야 하기 때문에 status 선언을 atomic으로 바꾼다.
 			if (STATUS::ST_INGAME == Clients[i]._state)
 			{
 				sendPacket.send_put_object(cl._socket, i,
@@ -384,22 +384,13 @@ void AccessGame(short user_id, char* name)
 				}
 				else
 				{
-					//플레이어가 npc 시야에 들어오면 1초마다 길찾기 하면서 쫓아옴
 					if (cl.npcCharacterType == NPC_FIGHT)
 					{
 						do_npc_move(i);
 
-						/*if (Clients[user_id]._target == nullptr)
-						{
-							cl.target = &Clients[user_id];
-
-							if (Clients[cl.m_id].npcMoveType != NPC_RANDOM_MOVE)
-								random_move_npc(cl.m_id);
-						}*/
 					}
 				}
 			}
-			//Clients[i].m_cLock.unlock();
 		}
 	}
 
