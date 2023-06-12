@@ -16,11 +16,11 @@
     <Filter Include="헤더 파일\LUA">
       <UniqueIdentifier>{ff79d0d9-6740-48b5-a76c-60b5d83fdd90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\0.Main">
+      <UniqueIdentifier>{537c2670-c4ac-4c0f-820f-d2b388e4f482}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Server.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -41,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Sender.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>소스 파일\0.Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
